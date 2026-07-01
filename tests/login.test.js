@@ -3,7 +3,8 @@ import { sleep, check } from 'k6'
 const postLogin = JSON.parse(open('../fixtures/postLogin.json'))
 
 export const options = {
- 
+
+
 stages: [ 
     {duration: '5s',  target: 10}, 
     {duration: '20s',  target: 10},
