@@ -1,10 +1,12 @@
 import http from 'k6/http'
 import { sleep, check } from 'k6'
+import { pegarBaseURL } from '../utils/variaveis.js'
 const postLogin = JSON.parse(open('../fixtures/postLogin.json'))
+
 
 export const options = {
 
-
+ 
 stages: [ 
     {duration: '5s',  target: 10}, 
     {duration: '20s',  target: 10},
@@ -19,7 +21,7 @@ stages: [
 
 export default function () {
   
-  const url = 'http://localhost:3000/login'
+  const url = pegarBaseURL() + '/login'
   const payload = JSON.stringify(postLogin)
 
   const params = {
